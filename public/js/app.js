@@ -2,9 +2,9 @@
 const weatherform = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
-const messageOne = document.querySelector('#message-2')
+//const messageOne = document.querySelector('#message-2')
 
-
+messageOne.textContent = 'from javascript'
 
 
 weatherform.addEventListener('submit',(e)=>{
@@ -17,11 +17,14 @@ weatherform.addEventListener('submit',(e)=>{
 fetch('/weather?address='+location).then((Response)=>{
     Response.json().then((data)=>{
         if (data.error){
-            messageOne.textContent=data.error
+                console.log(data.error)
+            //  messageOne.textContent=data.error
 
         }else{
-            messageOne.textContent=data.location
-            messageOne.textContent=data.forecast
+            console.log(data.location)
+            console.log(data.forecast)
+            // messageOne.textContent=data.location
+            // messageOne.textContent=data.forecast
 
         }
     })
